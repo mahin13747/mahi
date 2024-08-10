@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 800;
+            text-align: center;
+            background-color: darkgray;
+        }
+        #div{
+            padding: 130px;
+        }
+        #div2{
+            background-color: antiquewhite;
+            padding: 50px;
+            padding-left: 150px;
+            padding-right: 150px;
+        }
+        #calculate{
+            margin-top: 80px;
+        }
+        label{
+            display: block;
+            margin-bottom: 10px;
+        }
+        input{
+            margin-bottom: 20px;
+            padding: 15px 80px;
+        }
+        button{
+            padding: 15px 125px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #result{
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div">
+        <div id="div2">
+            <h1 style="color: blue;">Simple Interest Calculator</h1>
+            <form id="Calclate">
+                <label for="principal">principal Amount($):</label>
+                <input type="number" id="principal" required>
+                <label for="rate">Annual Interest Rate(%):</label>
+                <input type="number" id="rate" required>
+                <label for="time">Number of Years</label>
+                <input type="number" id="time" required>
+                <br>
+                <button id="submit">Calculate</button>
+                <p>After 2 years, your investment will be <br>worth $60000.00 with simple interest</p>
+            </form>
+            <!-- <div id="result"></div> -->
+            <script>
+                const form=document.getElementById('calculate');
+                const resultDiv=document.getElementById('result');
+                form.addEventListener('submit',(e)=>{
+                e.preventDefault();
+                const principal=parseFloat(document.getElementById('principal').value);
+                const rate=parseFloat(document.getElementById('rate').value);
+                const time=parseFloat(document.getElementById('time').value);
+
+                const simpleInterest=(principal*rate*time)/100;
+                });
+            </script>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple Interest Calculator</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+            font-weight: 800;
+            text-align: center;
+            background-color: darkgray;
+		}
+		
+		#calculator-form {
+			margin-bottom: 20px;
+		}
+		
+		label {
+			display: block;
+			margin-bottom: 10px;
+		}
+		
+		input {
+			margin-bottom: 20px;
+			padding: 10px;
+		}
+		
+		button {
+			padding: 10px 75px;
+			background-color:blue;
+			color:white;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		
+		button:visited {
+			background-color: rgb(9, 184, 190);
+		}
+		
+		#result {
+			margin-top: 20px;
+			padding: 20px;
+			background-color: #f0f0f0;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+		}
+	</style>
+</head>
+<body>
+	   <h1 style="color:blue">Simple Interest Calculator</h1>
+	   <form id="calculator-form">
+		   <label for="principal">Principal Amount($):</label>
+		   <input type="number" id="principal" required>
+		   <label for="rate">Annual Interest Rate (%):</label>
+		   <input type="number" id="rate" required>
+		   <label for="time">Number of Years:</label>
+		   <input type="number" id="time" required>
+           <br>
+		   <button type="submit">Calculate</button>
+	</form>
+	<div id="result"></div>
+	
+	<script>
+		const form = document.getElementById('calculator-form');
+		const resultDiv = document.getElementById('result');
+		
+		form.addEventListener('submit', (e) =>{
+			e.preventDefault();
+			const principal = parseFloat(document.getElementById('principal').value);
+			const rate = parseFloat(document.getElementById('rate').value);
+			const time = parseFloat(document.getElementById('time').value);
+			
+			const simpleInterest = (principal * rate * time) / 100;
+			resultDiv.innerHTML = After ${time} years,your investment will be worth $${simpleInterest.toFixed(2)} with simple interest;
+
+            const =document.getElementById("tipdisplay")
+            tipresult.textContent="The Tip Amount : "+(tipamount)
+		});
+	</script>
+</body>
+</html>
+
+
+
+    const tipresult=document.getElementById("tipdisplay")
+        tipresult.textContent="The Tip Amount : "+(tipamount)
+
+
+        const tiptotal=document.getElementById("total")
+        tiptotal.textContent="The Total Amount : "+(tipamount+billamount)

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume.html</title>
+    <style>
+        #dynamic-text{
+            font-size: 40px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="dynamic-text"></div>
+    <script>
+        const dynamicText=document.getElementById('dynamic-text');
+        const text='I am a-Web Developer';
+        let i=0;
+
+        function printText(){
+            if(i<text.length){
+                dynamicText.innerHTML +=text[i];
+                i++;
+                setTimeout(printText,100);
+            }
+        }
+        printText();
+    </script>
+</body>
+</html>
